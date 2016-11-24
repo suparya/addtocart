@@ -18,5 +18,8 @@
   "homepage": "https://github.com/suparya/addtocart#readme",
   "devDependencies": {
     "lite-server": "^2.2.2"
+  },
+  "dependencies": {
+    "angular-ui-router": "^0.3.1"
   }
 }
