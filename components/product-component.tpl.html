@@ -1,20 +1,14 @@
-<div class="container">
-<div style="background-color: "></div>
-	
-</div>
-<div class="container">
-    <div class="row" style=" border:solid 1px black">
-        <div class="col-sm-6" ng-repeat="obj in $ctrl.allproducts" style=" border:solid 1px black">
-            <div class="col-sm-6">
-                <img ng-src="{{obj.image}}"></div>
-            <div class="col-sm-6">
-                <h1>{{obj.name}}</h1>
-                <h2>Rs {{obj.price}}/-</h2>
-                <p>{{obj.description}}</p>
-                <button type="button" class="btn btn-success btn-rounded 10-mb" ng-click="$ctrl.addToCart(obj)">Add to cart</button>
-            </div>
-           
+<select-menu links="$ctrl.links" count="$ctrl.itemCount"></select-menu>
+<div class="row">
+    <div class="col-sm-6" ng-repeat="obj in $ctrl.allproducts">
+        <div class="col-sm-6">
+            <img ng-src="{{obj.image}}"></div>
+        <div class="col-sm-6">
+            <h1>{{obj.name}}</h1>
+            <h2>Rs {{obj.price}}/-</h2>
+            <p>{{obj.description}}</p>
+            <button type="button" class="btn btn-success btn-rounded 10-mb" ng-click="$ctrl.addToCart(obj)">Add to cart</button>
         </div>
     </div>
 </div>
-<!-- <img src="smiley.gif" alt="Smiley face" height="42" width="42"> -->
+<!-- <img src="smiley.gif" alt="Smiley face" height="42" width="42"> 

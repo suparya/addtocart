@@ -5,16 +5,14 @@
         .module('app')
         .component('allProducts', {
             bindings: {
-                cartItems: '=',
-                itemCount: '='
+                itemCount: "="
             },
             templateUrl: 'components/product-component.tpl.html',
             controller: ProductComponent
         });
 
-    function ProductComponent() {
+    function ProductComponent(commonSvc) {
         var vm = this;
-        vm.itemCount = 0;
         vm.cartItems = [];
         vm.allproducts = [{
             name: "Nokia",
@@ -33,18 +31,31 @@
             image: 'images/lenovo.jpg'
         }];
 
+        vm.links = [{
+            title: 'Home',
+            state: 'homestate'
+        }, {
+            title: 'Contact Us',
+            state: 'contactus'
+        }, {
+            title: 'About Us',
+            state: 'aboutus'
+        }];
+
+
 
         activate();
 
         function activate() {}
 
         vm.addToCart = function(obj) {
+            vm.itemCount = 0;
             console.log(obj);
             vm.itemCount += 1;
-            console.log(vm.itemCount);
-            vm.cartItems.push(obj);
-             console.log(vm.cartItems);
-
+            // console.log(vm.itemCount);
+            commonSvc.saveCartInfo(obj).then(function(response) {
+                console.log('response', response);
+            });
         }
     }
 })();

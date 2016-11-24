@@ -1,0 +1,19 @@
+<div class='navbar navbar-inverse' role='navigation'>
+    <div class='container'>
+        <div class='navbar-collapse collapse' collapse='navCollapsed'>
+            <ul class='nav navbar-nav'>
+                <li ui-sref-active='active' ng-repeat="(key, value) in $ctrl.links">
+                    <a ui-sref="{{value.state}}" href="javascript:void(0);">{{value.title}}</a>
+                </li>
+                <!--    <li ui-sref-active='active'>
+                    <a ui-sref="contactus" href="javascript:void(0);">homeState</a>
+                </li> -->
+            </ul>
+            <ul class=" nav navbar-nav nav-right pull-right">
+                <li ui-sref-active='active' class="pull-right">
+                    <a ui-sref='YourCart'>Your Cart <span class="badge">{{$ctrl.count}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
